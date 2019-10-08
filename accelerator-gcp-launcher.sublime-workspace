@@ -1,0 +1,339 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jefferyfry/Desktop/cloud-bill-dev-configs/frontend-service-config.json",
+		"/Users/jefferyfry/git/cbdc-identity-auth0/config.development.json",
+		"/Users/jefferyfry/Desktop/cloud-bill-dev-configs/datastore-backup-config.json",
+		"/Users/jefferyfry/Desktop/cloud-bill-dev-configs/pubsub-service-config.json",
+		"/Users/jefferyfry/Desktop/cloud-bill-dev-configs/subscription-service-config.json",
+		"/Users/jefferyfry/Desktop/cloud-bill-dev-configs/frontend-service-config-dev.json",
+		"/Users/jefferyfry/Desktop/cloud-bill-dev-configs/frontend-service-config-cb.json",
+		"/Users/jefferyfry/Desktop/cloud-bill-dev-manifests/cloud-billing-saas.yaml",
+		"/Users/jefferyfry/Desktop/jenkins-support-configs/frontend-service-config.json",
+		"/Users/jefferyfry/Desktop/jenkins-support-configs/subscription-service-config.json",
+		"/Users/jefferyfry/Desktop/jenkins-support-configs/pubsub-service-config.json",
+		"/Users/jefferyfry/Desktop/jenkins-support-manifests/jenkins-support-saas.yaml",
+		"/Users/jefferyfry/.jx/gitAuth.yaml",
+		"/Users/jefferyfry/Downloads/Untitleddocument.html",
+		"/Users/jefferyfry/git/spring-petclinic-docker-build-podTemplate-gkeonprem2/Jenkinsfile",
+		"/Users/jefferyfry/git/cjd-gcp-launcher/package/cloudbees-jenkins-distribution.jinja",
+		"/Users/jefferyfry/git/cjd-gcp-launcher/package/cloudbees-jenkins-distribution.jinja.display",
+		"/Users/jefferyfry/git/cjd-gcp-launcher/deploymentmanager-autogen/solution.yaml",
+		"/Users/jefferyfry/git/cjd-aws-cf/cjd-aws-cf.template-1",
+		"/Users/jefferyfry/git/spring-petclinic-docker-build-podTemplate-gkeonprem2/podTemplate/spring-petclinic-docker-build.yaml",
+		"/Users/jefferyfry/git/core-aws-launcher/manifest/cloudbees-core.yml",
+		"/Users/jefferyfry/git/core-helm-vke/templates/cje.yml",
+		"/Users/jefferyfry/cje2/helm/CloudBeesCore/templates/NOTES.txt",
+		"/Users/jefferyfry/cje2/helm/temp/templates/NOTES.txt",
+		"/Users/jefferyfry/git/core-helm-vke/templates/NOTES.txt",
+		"/Users/jefferyfry/cje2/helm/CloudBeesCore/templates/cje.yml",
+		"/Users/jefferyfry/cje2/helm/CloudBeesCore/values.yaml",
+		"/Users/jefferyfry/cje2/helm/temp/values.yaml",
+		"/Users/jefferyfry/cje2/helm/CloudBeesCore/templates/deployment.yaml",
+		"/Users/jefferyfry/cje2/helm/CloudBeesCore/templates/ingress.yaml",
+		"/Users/jefferyfry/cje2/helm/CloudBeesCore/templates/service.yaml",
+		"/Users/jefferyfry/git/spring-petclinic-kaniko-build/Dockerfile",
+		"/Users/jefferyfry/git/spring-petclinic-vm-build/pom.xml",
+		"/Users/jefferyfry/Downloads/dynamic-agent.ovf",
+		"/Users/jefferyfry/cje2/vke/cje.yml",
+		"/Users/jefferyfry/git/spring-petclinic-docker-build/readme.md",
+		"/Users/jefferyfry/cje2/cje2_2.107.3.4_k8s-partner-hosting/cje-orig.yml",
+		"/Users/jefferyfry/git/docker-pipeline-example/Dockerfile",
+		"/Users/jefferyfry/cje2/cje2_2.107.3.4_k8s-partner-hosting/bd-dev1/cje.yml",
+		"/Users/jefferyfry/git/core-google-launcher/manifest/application.yaml.template",
+		"/Users/jefferyfry/git/core-google-launcher/manifest-ingress/nginx-cloud-generic.yaml.template",
+		"/Users/jefferyfry/git/core-google-launcher/manifest-ingress/nginx-mandatory.yaml.template",
+		"/Users/jefferyfry/git/marketplace-k8s-app-tools/marketplace/deployer_util/setassemblyphase.py",
+		"/Users/jefferyfry/git/marketplace-k8s-app-tools/marketplace/deployer_util/deploy.sh",
+		"/Users/jefferyfry/git/marketplace-k8s-app-tools/common.Makefile",
+		"/Users/jefferyfry/git/marketplace-k8s-app-tools/app.Makefile",
+		"/Users/jefferyfry/Desktop/app_install_results.log",
+		"/Users/jefferyfry/git/core-google-launcher/Dockerfile",
+		"/Users/jefferyfry/git/core-google-launcher/marketplace-tools/app.Makefile",
+		"/Users/jefferyfry/git/marketplace-k8s-app-tools/marketplace/deployer_envsubst_base/create_manifests.sh",
+		"/Users/jefferyfry/git/marketplace-k8s-app-tools/marketplace/deployer_envsubst_base/Dockerfile",
+		"/Users/jefferyfry/git/marketplace-k8s-app-tools/marketplace/deployer_util/patch_assembly_phase.sh",
+		"/Users/jefferyfry/git/core-google-launcher/vendor/marketplace-tools/app.Makefile",
+		"/Users/jefferyfry/git/core-google-launcher/vendor/marketplace-tools/crd.Makefile",
+		"/Users/jefferyfry/git/core-google-launcher/vendor/marketplace-tools/common.Makefile",
+		"/Users/jefferyfry/git/core-google-launcher/vendor/marketplace-tools/crd/app-crd.yaml",
+		"/Users/jefferyfry/git/core-google-launcher/vendor/marketplace-tools/var.Makefile",
+		"/Users/jefferyfry/git/core-google-launcher/vendor/marketplace-tools/scripts/start.sh",
+		"/Users/jefferyfry/git/core-google-launcher/deployer/cje.yml",
+		"/Users/jefferyfry/git/core-google-launcher/deployer/deploy.sh",
+		"/Users/jefferyfry/git/marketplace-k8s-app-tools/marketplace/deployer_helm_base/Dockerfile",
+		"/Users/jefferyfry/git/marketplace-k8s-app-tools/Dockerfile",
+		"/Users/jefferyfry/git/core-google-launcher/deploy/tests.py",
+		"/Users/jefferyfry/git/core-google-launcher/deploy/setupCjoc.py",
+		"/Users/jefferyfry/cje2/cje2_2.107.3.4_k8s-partner-hosting/core-launcher/cje.yml",
+		"/Users/jefferyfry/Downloads/td-cloudbees/install.jinja",
+		"/Users/jefferyfry/cje2/cje2_2.107.3.4_kubernetes/cje.yml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"jenkins-support",
+			"CLOUD_BILLING",
+			"cloud-bill.35.185.91.171",
+			"cloudbees-jenkins-support",
+			"guideroos",
+			"34.73.180.133",
+			"104.196.43.249",
+			": { \"Arch\" : \"HVM64\"  }",
+			"networkIn",
+			"extensions",
+			"subnetname",
+			"/subnet",
+			"subnetname",
+			"subnetName",
+			"resourceGroup().location",
+			"vmSize",
+			"vmSshPublicKey",
+			"vmUsername",
+			"Microsoft.Resources/deployments",
+			"https",
+			"443",
+			"title",
+			"status",
+			"WAITER",
+			"project-id",
+			"WebServer",
+			"WebServerInstance",
+			"WebServer",
+			"Prep",
+			"AddRepoAndInstall",
+			"InstallAndFinish",
+			"aws cloud",
+			"Service",
+			"https",
+			"cloudbees-core-vke.52.34.56.237",
+			"virtualide",
+			"cloudbees-core-vke",
+			"cloudbees-core-vke.52.39.42.103.xip.io",
+			"nginx-ingress-controller.cloudbees-core-vke-8d38a42a-952d-11e8-8d87-0aad57bc14d0.98c89a30-8017-4ba4-a981-2c873475d841.vke-user.com",
+			"cloudbees-core.52.34.106.230.xip.io",
+			"cloudbees-core-vke.35.166.172.8.xip.io",
+			"nginx-ingress-controller.cloudbees-core-vke-8d38a42a-952d-11e8-8d87-0aad57bc14d0.98c89a30-8017-4ba4-a981-2c873475d841.vke-user.com",
+			"ssl",
+			"ssl-",
+			"cloudbees-core-pks.35.224.46.206.xip.io",
+			"35.184.201.151",
+			"35.229.30.218",
+			"2.107.3.4",
+			"35.229.30.218",
+			"bd-dev1",
+			"cloudbees-core-vke",
+			"ServiceAccount",
+			"52.43.180.60",
+			"52.33.26.89",
+			"52.39.42.55",
+			"storageC",
+			"35.227.38.183",
+			"storageclassn",
+			"storageC",
+			"image",
+			"template",
+			"metadata",
+			"jenkins-home",
+			"nginxServiceAccount",
+			"cjocServiceAccount",
+			"jenkinsServiceAccount",
+			"jenkins-agent",
+			"metada",
+			"metadata",
+			"name:",
+			"serviceAccountN",
+			"$NAMESPACE",
+			"$APP_INSTANCE_NAME",
+			"namespace",
+			"ServiceAccount",
+			"serviceAccount",
+			"serviceAccountName",
+			"servicea",
+			"'app.k8s.io/v1beta1'",
+			"nginx-ingress-serviceaccount",
+			"servicea",
+			"cluster_name",
+			"hpi",
+			"password",
+			"jq",
+			"domain_name",
+			"storageClas",
+			"ingress",
+			"storageCla",
+			"Ingress",
+			"storageClass",
+			"Ingress",
+			"storageCl",
+			"web_service",
+			"rest",
+			"x_176989_",
+			"securitygroup",
+			"configm",
+			"namespace",
+			"namesapc",
+			"namespace"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"cloud-bill",
+			"CLOUD_BILL",
+			"cloud-bill",
+			"guidaroos",
+			"104.196.43.249",
+			"34.73.180.133",
+			"",
+			"parameters('location')",
+			"JenkinsServer",
+			"JenkinsServerInstance",
+			"JenkinsServer",
+			"PrepAndInstall",
+			"AddRepoAndInstall",
+			"cloudbees-core-vke-priv.52.36.93.233",
+			"cloudbees-vke",
+			"cloudbees-vke.52.43.21.252.xip.io",
+			"cloudbees-core-vke.52.39.42.103.xip.io",
+			"nginx-ingress-controller.cloudbees-core-vke-8d38a42a-952d-11e8-8d87-0aad57bc14d0.98c89a30-8017-4ba4-a981-2c873475d841.vke-user.com",
+			"cloudbees-core-vke.52.39.42.103.xip.io",
+			"cloudbees-vke.52.39.42.103.xip.io",
+			"nginx-ingress-controller.cloudbees-core-vke-8d38a42a-952d-11e8-8d87-0aad57bc14d0.98c89a30-8017-4ba4-a981-2c873475d841.vke-user.com",
+			"cloudbees-core-vke.35.166.172.8.xip.io",
+			"nginx-ingress-controller.cloudbees-core-vke-8d38a42a-952d-11e8-8d87-0aad57bc14d0.98c89a30-8017-4ba4-a981-2c873475d841.vke-user.com",
+			"35.224.46.206",
+			"35.229.44.187",
+			"2.121.2.1",
+			"35.237.213.37",
+			"bd-dev",
+			"52.34.106.230",
+			"52.43.180.60",
+			"52.33.26.89",
+			"35.237.209.35",
+			"cloudBeesCoreServiceAccount",
+			"$namespace",
+			"$name",
+			"$NAME",
+			"''",
+			"nginxIngressServiceAccount",
+			"x_clbe_"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

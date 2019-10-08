@@ -1,0 +1,3 @@
+# accelerator-gcp-launcher
+This is the CloudBees Accelerator launcher for GCP Marketplace. This deploys a GCE instance...
+

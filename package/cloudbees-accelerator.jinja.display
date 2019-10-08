@@ -1,0 +1,139 @@
+description:
+  author:
+    title: CloudBees
+    descriptionHtml: |
+      CloudBees is building the world’s first end-to-end automated software delivery system; putting companies on the fast track to transforming great ideas into great software and delivering value to their business more quickly.
+    shortDescription: CloudBees is building the world’s first end-to-end automated software delivery system.
+    url: https://www.cloudbees.com
+  descriptionHtml: CloudBees Accelerator provides development teams with a highly dependable, secure Jenkins environment curated from the most recent supported Jenkins release. The distribution comes with a recommended catalog of tested plugins available through the <a href="https://go.cloudbees.com/docs/cloudbees-documentation/assurance-program/">CloudBees Assurance Program</a>. Upgrades are now a smooth, seamless experience with the <a href="https://go.cloudbees.com/docs/cloudbees-documentation/assurance-program/">Beekeeper Upgrade Assistant</a>. The Beekeeper Upgrade Assistant works in parallel with the CloudBees Assurance Program to provide a centralized view of the monitored Jenkins plugins, as well as recommended actions and configuration options. The free <a href="https://go.cloudbees.com/docs/general/legal/cloudbees-accelerator-jenkinslicenses/">CloudBees Jenkins Advisor</a> plugin keeps an eye out for potential issues and recommendations and sends you email notifications with suggestions tailored to your installation. <br/><br/> The <a href="https://go.cloudbees.com/docs/general/legal/cloudbees-accelerator-jenkinslicenses/">CloudBees Accelerator License Report</a> has a list of included plugins. <br/><br/> For 24 hours a day, 7 days a week support from the Jenkins experts, visit <a href="https://www.cloudbees.com/cloudbees-jenkins-support-gcp">CloudBees Jenkins Support</a>.
+  logo: '@media/cloudbees-accelerator_store.png'
+  tagline: Jenkins tailored for you.
+  title: CloudBees Accelerator
+  url: https://www.cloudbees.com/products/cloudbees-accelerator
+  version: Latest
+  eulaUrl: https://www.google.com
+  softwareGroups:
+  - type: SOFTWARE_GROUP_OS
+    software:
+    - title: Debian
+      version: '9'
+  - software:
+    - title: Apache
+      version: 2.4.29
+  documentations:
+  - title: Features
+    url: https://go.cloudbees.com/docs/general/feature-definitions/cloudbees-accelerator/
+    description: Discover new features that are included in CloudBees Accelerator.
+    destinations:
+    - DESTINATION_POST_DEPLOY
+    - DESTINATION_CONFIGURATION
+  - title: Getting Started
+    url: https://storage.googleapis.com/cjd-gcp/GettingStarted.html
+    description: Get started with CloudBees Accelerator and create your first pipeline.
+    destinations:
+    - DESTINATION_POST_DEPLOY
+    - DESTINATION_CONFIGURATION
+  - title: Using and Managing Plugins
+    url: https://go.cloudbees.com/docs/plugins/
+    description: Understand how to use and manage Jenkins plugins.
+    destinations:
+    - DESTINATION_POST_DEPLOY
+    - DESTINATION_CONFIGURATION
+  support:
+  - title: Support
+    descriptionHtml: '24/7 On-call support from the largest team of Jenkins-certified engineers anywhere in the world.'
+    url: https://www.cloudbees.com/cloudbees-jenkins-support-gcp
+
+input:
+  properties:
+    - name: zone
+      title: Zone
+    - name: machineType
+      title: Machine type
+    - name: bootDiskType
+      title: Boot disk type
+      section: BOOT_DISK
+    - name: bootDiskSizeGb
+      title: Boot disk size in GB
+      section: BOOT_DISK
+    - name: network
+      title: Network name
+      section: NETWORKING
+    - name: subnetwork
+      title: Subnetwork name
+      section: NETWORKING
+    - name: externalIP
+      title: External IP
+      tooltip: 'An external IP address associated with this instance. Selecting "None" will result in the instance having no external internet access. <a href="https://cloud.google.com/compute/docs/configure-instance-ip-addresses">Learn more</a>'
+      section: NETWORKING
+    - name: enableTcp443
+      title: Allow HTTPS traffic
+      section: NETWORKING
+    - name: tcp443SourceRanges
+      title: Source IP ranges for HTTPS traffic
+      tooltip: 'Traffic is only allowed from sources within these IP address ranges. Use CIDR notation when entering ranges. <a href="https://cloud.google.com/compute/docs/networking#firewalls">Learn more</a>'
+      placeholder: '0.0.0.0/0, 192.169.0.2/24'
+      section: NETWORKING
+  sections:
+    - name: BOOT_DISK
+      title: Boot Disk
+      tooltip: Each instance requires a disk to boot from.
+    - name: NETWORKING
+      title: Networking
+
+runtime:
+  deployingMessage: Deployment can take several minutes to complete.
+  applicationTable:
+    rows:
+      - label: Instance
+        value: '<a href="{{ consoleUrl(outputs().vmSelfLink) }}">{{ outputs().vmName }}</a>'
+      - label: Instance zone
+        value: '{{ properties().zone }}'
+      - label: Instance machine type
+        value: '{{ properties().machineType }}'
+      - label: Home URL
+        value: <a href="https://{{ externalIp(outputs().vmSelfLink) }}/">https://{{ externalIp(outputs().vmSelfLink) }}/</a>
+      - label: Instance
+        value: <a href="{{ consoleUrl(outputs().vmSelfLink) }}">{{ outputs().vmName }}</a>
+      - label: Instance Machine Type
+        value: '{{ properties().machineType }}'
+      - label: Zone
+        value: '{{ properties().zone }}'
+  primaryButton:
+    label: SSH
+    type: TYPE_GCE_VM_SSH
+    action: '{{ outputs().vmSelfLink }}'
+  suggestedActions:
+    - heading: No external IP configured
+      description: 'The VM instance has been configured with no external IP or internet access. Connecting to it directly may not be possible. Consider using a <a href="https://cloud.google.com/compute/docs/instances/connecting-advanced#bastion_host">bastion host</a> to access this VM.'
+      showIf: '{{ properties().externalIP == "NONE" }}'
+    - heading: Get the initial admin password.
+      description: SSH to the CloudBees Accelerator instance to get the initial admin password. Execute the following command.
+      snippet: sudo cat /var/lib/cloudbees-accelerator/secrets/initialAdminPassword
+    - heading: Complete the setup.
+      description: Go to <a href="https://{{ externalIp(outputs().vmSelfLink) }}/">https://{{ externalIp(outputs().vmSelfLink) }}/</a> to apply your initial admin password and complete the setup.
+    - heading: Open HTTPS traffic
+      description: >-
+        This firewall rule is not enabled.
+        To allow specific network traffic from the Internet,
+        create a firewall rule to open HTTPS traffic
+        for target tag "{{ outputs().deployment }}-tcp-443".
+        <a href="https://cloud.google.com/compute/docs/networking">Learn more</a><br>
+        If you are using Google Cloud SDK, type the following command in
+        the terminal:
+      snippet: >-
+        gcloud --project={{ outputs().project }} compute firewall-rules
+        create "{{ outputs().deployment }}-tcp-443"
+        --network {{ properties().network }}
+        --allow tcp:443
+        --target-tags "{{ outputs().deployment }}-tcp-443"
+      showIf: '{{ !properties().enableTcp443 }}'
+    - heading: Assign a static external IP address to your VM instance
+      description: 'An ephemeral external IP address has been assigned to the VM instance. If you require a static external IP address, you may promote the address to static. <a href="https://cloud.google.com/compute/docs/instances-and-network#promote_ephemeral_ip">Learn more</a>'
+      showIf: '{{ properties().externalIP == "EPHEMERAL" }}'
+
+annotations:
+  autogenSpecType: 'SINGLE_VM'
+  vmImage0: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20190312
+
+metadata_version: v1

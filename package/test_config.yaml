@@ -1,0 +1,6 @@
+imports:
+- path: cloudbees-accelerator.jinja
+
+resources:
+- name: cloudbees-accelerator
+  type: cloudbees-accelerator.jinja
