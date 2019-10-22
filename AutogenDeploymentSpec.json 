@@ -1,0 +1,57 @@
+{
+  "singleVm": {
+    "images": [
+      {
+        "project": "<marketplace-project>",
+        "name": "<vm-image>"
+      }
+    ],
+    "firewallRules": [],
+    "passwords": [],
+    "machineType": {
+      "defaultMachineType": {
+        "gceMachineType": "n1-standard-32"
+      },
+      "minimum": {
+        "cpu": 32,
+        "ramGb": 119.9990234375
+      }
+    },
+    "bootDisk": {
+      "diskSize": {
+        "defaultSizeGb": 500,
+        "minSizeGb": 1
+      },
+      "diskType": {
+        "defaultType": "pd-ssd"
+      }
+    },
+    "postDeploy": {
+      "actionItems": [
+        {
+          "heading": "Setup your project sources",
+          "description": "On your GCP Marketplace instance, download or checkout your source code and install any additional tools needed to execute your build.",
+          "snippet": "git clone ..."
+        },
+        {
+          "heading": "Run emake learning build",
+          "description": "Change to your project directory.  Invoke emake by typing \"emake\".  By default emake will use the current working directory as the virtualization root.  If you need additional directories, such as an output directory, specify all the needed directories using the --emake-root command-line option, each path separated by a colon.",
+          "snippet": "emake --emake-root=~/src:~/out"
+        },
+        {
+          "heading": "Clean your build output",
+          "description": "After running a learning build, clean the output to prepare for a fully accelerated build.  Make sure you do not delete the emake history file (emake.data) or emake asset directory (.emake)."
+        },
+        {
+          "heading": "Run emake accelerated build",
+          "description": "Run emake again, from the same directory, and using the same options you used the first time.",
+          "snippet": "emake --emake-root=~/src:~/out"
+        }
+      ],
+      "infoRows": [],
+      "connectButton": {
+        "displayLabel": "Connect to Accelerator VM"
+      }
+    }
+  }
+}

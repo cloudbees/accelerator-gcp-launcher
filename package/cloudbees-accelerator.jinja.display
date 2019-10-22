@@ -1,49 +1,106 @@
 description:
   author:
     title: CloudBees
-    descriptionHtml: |
-      CloudBees is building the world’s first end-to-end automated software delivery system; putting companies on the fast track to transforming great ideas into great software and delivering value to their business more quickly.
-    shortDescription: CloudBees is building the world’s first end-to-end automated software delivery system.
-    url: https://www.cloudbees.com
-  descriptionHtml: CloudBees Accelerator provides development teams with a highly dependable, secure Jenkins environment curated from the most recent supported Jenkins release. The distribution comes with a recommended catalog of tested plugins available through the <a href="https://go.cloudbees.com/docs/cloudbees-documentation/assurance-program/">CloudBees Assurance Program</a>. Upgrades are now a smooth, seamless experience with the <a href="https://go.cloudbees.com/docs/cloudbees-documentation/assurance-program/">Beekeeper Upgrade Assistant</a>. The Beekeeper Upgrade Assistant works in parallel with the CloudBees Assurance Program to provide a centralized view of the monitored Jenkins plugins, as well as recommended actions and configuration options. The free <a href="https://go.cloudbees.com/docs/general/legal/cloudbees-accelerator-jenkinslicenses/">CloudBees Jenkins Advisor</a> plugin keeps an eye out for potential issues and recommendations and sends you email notifications with suggestions tailored to your installation. <br/><br/> The <a href="https://go.cloudbees.com/docs/general/legal/cloudbees-accelerator-jenkinslicenses/">CloudBees Accelerator License Report</a> has a list of included plugins. <br/><br/> For 24 hours a day, 7 days a week support from the Jenkins experts, visit <a href="https://www.cloudbees.com/cloudbees-jenkins-support-gcp">CloudBees Jenkins Support</a>.
-  logo: '@media/cloudbees-accelerator_store.png'
-  tagline: Jenkins tailored for you.
-  title: CloudBees Accelerator
-  url: https://www.cloudbees.com/products/cloudbees-accelerator
-  version: Latest
-  eulaUrl: https://www.google.com
-  softwareGroups:
-  - type: SOFTWARE_GROUP_OS
-    software:
-    - title: Debian
-      version: '9'
-  - software:
-    - title: Apache
-      version: 2.4.29
-  documentations:
-  - title: Features
-    url: https://go.cloudbees.com/docs/general/feature-definitions/cloudbees-accelerator/
-    description: Discover new features that are included in CloudBees Accelerator.
-    destinations:
-    - DESTINATION_POST_DEPLOY
-    - DESTINATION_CONFIGURATION
-  - title: Getting Started
-    url: https://storage.googleapis.com/cjd-gcp/GettingStarted.html
-    description: Get started with CloudBees Accelerator and create your first pipeline.
-    destinations:
-    - DESTINATION_POST_DEPLOY
-    - DESTINATION_CONFIGURATION
-  - title: Using and Managing Plugins
-    url: https://go.cloudbees.com/docs/plugins/
-    description: Understand how to use and manage Jenkins plugins.
-    destinations:
-    - DESTINATION_POST_DEPLOY
-    - DESTINATION_CONFIGURATION
-  support:
-  - title: Support
-    descriptionHtml: '24/7 On-call support from the largest team of Jenkins-certified engineers anywhere in the world.'
-    url: https://www.cloudbees.com/cloudbees-jenkins-support-gcp
+    descriptionHtml: >-
+      Open source is a part of our DNA, and we’re proud to be the #1 corporate
+      sponsor to Jenkins. CloudBees is powering the continuous economy by
+      offering an end-to-end continuous software delivery management (SDM)
+      system. CloudBees is the CI, CD and application release orchestration
+      (ARO) powerhouse, built on the commercial success of its products and open
+      source leadership.
+    shortDescription: >-
+      Open source is a part of our DNA, and we’re proud to be the #1 corporate
+      sponsor to Jenkins. CloudBees is powering the continuous economy by
+      offering an end-to-end continuous software delivery management (SDM)
+      system. CloudBees is the CI, CD and application release orchestration
+      (ARO) powerhouse.
+    url: 'https://www.cloudbees.com/'
+  descriptionHtml: >-
+    <b>Build AOSP up to 5 times faster.</b><br/>
 
+    Waiting hours for Android OSP (AOSP) integration build cycles to complete is
+    a massive bottleneck that inhibits innovation and delays time to market.
+    CloudBees Accelerator runs on Google Compute Platform vCPUs to build AOSP
+    3-5X faster than GNU Make and ccache.<br/>
+
+    <br/>
+
+    <b>HOW DOES CLOUDBEES ACCELERATOR WORK?</b><br/>
+
+    CloudBees Accelerator is a build and test acceleration platform for Android
+    AOSP and other make-based build environments.  A drop-in replacement for
+    Ninja, CloudBees Accelerator intelligently and automatically parallelizes
+    software tasks across clusters of physical or cloud CPUs to dramatically
+    lower build cycle times.<br/><br/>
+
+    » Fault-tolerant workload distribution load balancing maximizes GCP
+    resources</br>
+
+    » Intelligent caching eliminates redundant work through build avoidance</br>
+
+    » Visibility into build utilization and integrity pinpoints problems and
+    identifies bottlenecks<br/>
+
+    </br>
+
+    <b>THE BUSINESS BENEFIT</b></br>
+
+    Accelerate your development velocity by 3-5x. Save 50% or more on your
+    infrastructure costs (over typical dedicated build infrastructure).  Spend
+    less time waiting for builds and more time on innovation.<br/></br>
+
+    Example: A major Android device manufacturer saw their build times drop from
+    five hours to 23 minutes
+  logo: '@media/cloudbees-accelerator_store.png'
+  tagline: Wait Less. Innovate More.
+  title: CloudBees Accelerator
+  url: 'https://www.cloudbees.com/cloudbees-accelerator'
+  version: '2019.10'
+  eulaUrl: >-
+    https://docs.cloudbees.com/docs/cloudbees-common/latest/subscription-agreement/
+  documentations:
+    - title: Quick Start
+      url: >-
+        http://docs.electric-cloud.com/accelerator_doc/QuickStart/HTML/AcceleratorQuickStart.htm#AcceleratorQuickStartDownloadTrial.htm%3FTocPath%3D_____2
+      destinations:
+        - DESTINATION_SOLUTION_DETAILS
+        - DESTINATION_POST_DEPLOY
+    - title: Release Notes
+      url: >-
+        http://docs.electric-cloud.com/accelerator_doc/Preview/ReleaseNotes/HTML/AcceleratorReleaseNotes_Preview.htm
+      destinations:
+        - DESTINATION_SOLUTION_DETAILS
+        - DESTINATION_POST_DEPLOY
+    - title: Electric Make User Guide
+      url: >-
+        http://docs.electric-cloud.com/accelerator_doc/Preview/eMake/HTML/AcceleratoreMakeGuide_Preview.htm
+      destinations:
+        - DESTINATION_SOLUTION_DETAILS
+        - DESTINATION_POST_DEPLOY
+    - title: Cluster Manager Help
+      url: >-
+        http://docs.electric-cloud.com/accelerator_doc/Preview/Help/HTML/AcceleratorHelp_Preview.htm
+      destinations:
+        - DESTINATION_SOLUTION_DETAILS
+        - DESTINATION_POST_DEPLOY
+  support:
+    - title: Support
+      descriptionHtml: >-
+        Receive engineer-to-engineer help and guidance from the experts at
+        CloudBees.
+
+         <a href='https://support.cloudbees.com/hc/en-us'>https://support.cloudbees.com/hc/en-us.</a>
+      url: 'https://support.cloudbees.com/hc/en-us'
+      showSupportId: true
+  icon: '@media/cloudbees-accelerator_small.png'
+  softwareGroups:
+    - type: SOFTWARE_GROUP_OS
+      software:
+        - title: Ubuntu
+          version: '18.04'
+    - software:
+        - title: CloudBees Accelerator
+          version: '2019.10'
 input:
   properties:
     - name: zone
@@ -64,15 +121,11 @@ input:
       section: NETWORKING
     - name: externalIP
       title: External IP
-      tooltip: 'An external IP address associated with this instance. Selecting "None" will result in the instance having no external internet access. <a href="https://cloud.google.com/compute/docs/configure-instance-ip-addresses">Learn more</a>'
-      section: NETWORKING
-    - name: enableTcp443
-      title: Allow HTTPS traffic
-      section: NETWORKING
-    - name: tcp443SourceRanges
-      title: Source IP ranges for HTTPS traffic
-      tooltip: 'Traffic is only allowed from sources within these IP address ranges. Use CIDR notation when entering ranges. <a href="https://cloud.google.com/compute/docs/networking#firewalls">Learn more</a>'
-      placeholder: '0.0.0.0/0, 192.169.0.2/24'
+      tooltip: >-
+        An external IP address associated with this instance. Selecting "None"
+        will result in the instance having no external internet access. <a
+        href="https://cloud.google.com/compute/docs/configure-instance-ip-addresses">Learn
+        more</a>
       section: NETWORKING
   sections:
     - name: BOOT_DISK
@@ -80,60 +133,64 @@ input:
       tooltip: Each instance requires a disk to boot from.
     - name: NETWORKING
       title: Networking
-
 runtime:
   deployingMessage: Deployment can take several minutes to complete.
   applicationTable:
     rows:
       - label: Instance
-        value: '<a href="{{ consoleUrl(outputs().vmSelfLink) }}">{{ outputs().vmName }}</a>'
+        value: >-
+          <a href="{{ consoleUrl(outputs().vmSelfLink) }}">{{ outputs().vmName
+          }}</a>
       - label: Instance zone
         value: '{{ properties().zone }}'
       - label: Instance machine type
         value: '{{ properties().machineType }}'
-      - label: Home URL
-        value: <a href="https://{{ externalIp(outputs().vmSelfLink) }}/">https://{{ externalIp(outputs().vmSelfLink) }}/</a>
-      - label: Instance
-        value: <a href="{{ consoleUrl(outputs().vmSelfLink) }}">{{ outputs().vmName }}</a>
-      - label: Instance Machine Type
-        value: '{{ properties().machineType }}'
-      - label: Zone
-        value: '{{ properties().zone }}'
   primaryButton:
-    label: SSH
+    label: Connect to Accelerator VM
     type: TYPE_GCE_VM_SSH
     action: '{{ outputs().vmSelfLink }}'
   suggestedActions:
     - heading: No external IP configured
-      description: 'The VM instance has been configured with no external IP or internet access. Connecting to it directly may not be possible. Consider using a <a href="https://cloud.google.com/compute/docs/instances/connecting-advanced#bastion_host">bastion host</a> to access this VM.'
-      showIf: '{{ properties().externalIP == "NONE" }}'
-    - heading: Get the initial admin password.
-      description: SSH to the CloudBees Accelerator instance to get the initial admin password. Execute the following command.
-      snippet: sudo cat /var/lib/cloudbees-accelerator/secrets/initialAdminPassword
-    - heading: Complete the setup.
-      description: Go to <a href="https://{{ externalIp(outputs().vmSelfLink) }}/">https://{{ externalIp(outputs().vmSelfLink) }}/</a> to apply your initial admin password and complete the setup.
-    - heading: Open HTTPS traffic
       description: >-
-        This firewall rule is not enabled.
-        To allow specific network traffic from the Internet,
-        create a firewall rule to open HTTPS traffic
-        for target tag "{{ outputs().deployment }}-tcp-443".
-        <a href="https://cloud.google.com/compute/docs/networking">Learn more</a><br>
-        If you are using Google Cloud SDK, type the following command in
-        the terminal:
-      snippet: >-
-        gcloud --project={{ outputs().project }} compute firewall-rules
-        create "{{ outputs().deployment }}-tcp-443"
-        --network {{ properties().network }}
-        --allow tcp:443
-        --target-tags "{{ outputs().deployment }}-tcp-443"
-      showIf: '{{ !properties().enableTcp443 }}'
+        The VM instance has been configured with no external IP or internet
+        access. Connecting to it directly may not be possible. Consider using a
+        <a
+        href="https://cloud.google.com/compute/docs/instances/connecting-advanced#bastion_host">bastion
+        host</a> to access this VM.
+      showIf: '{{ !outputs().hasExternalIP }}'
+    - heading: Set up your project sources
+      description: >-
+        On your GCP Marketplace instance, download or checkout your source code
+        and install any additional tools needed to execute your build.
+      snippet: git clone ...
+    - heading: Run emake learning build
+      description: >-
+        Change to your project directory.  Invoke emake by typing "emake".  By
+        default emake will use the current working directory as the
+        virtualization root.  If you need additional directories, such as an
+        output directory, specify all the needed directories using the
+        --emake-root command-line option, each path separated by a colon.
+      snippet: 'emake --emake-root=~/src:~/out'
+    - heading: Clean your build output
+      description: >-
+        After running a learning build, clean the output to prepare for a fully
+        accelerated build.  Make sure you do not delete the emake history file
+        (emake.data) or emake asset directory (.emake).
+    - heading: Run emake accelerated build
+      description: >-
+        Run emake again, from the same directory, and using the same options you
+        used the first time.
+      snippet: 'emake --emake-root=~/src:~/out'
     - heading: Assign a static external IP address to your VM instance
-      description: 'An ephemeral external IP address has been assigned to the VM instance. If you require a static external IP address, you may promote the address to static. <a href="https://cloud.google.com/compute/docs/instances-and-network#promote_ephemeral_ip">Learn more</a>'
-      showIf: '{{ properties().externalIP == "EPHEMERAL" }}'
-
+      description: >-
+        An ephemeral external IP address has been assigned to the VM instance.
+        If you require a static external IP address, you may promote the address
+        to static. <a
+        href="https://cloud.google.com/compute/docs/instances-and-network#promote_ephemeral_ip">Learn
+        more</a>
+      showIf: '{{ outputs().hasExternalIP }}'
 annotations:
-  autogenSpecType: 'SINGLE_VM'
-  vmImage0: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20190312
-
+  autogenSpecType: SINGLE_VM
+  vmImage0: >-
+    <vm-image>
 metadata_version: v1

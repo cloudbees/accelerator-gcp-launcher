@@ -1,7 +1,7 @@
 {
   "defaultDeploymentType": "SINGLE_VM",
-  "imageName": "cjd-base-image-2019-06-06",
-  "projectId": "cje-marketplace-dev",
+  "imageName": "<vm-image>",
+  "projectId": "<marketplace-project>",
   "templateName": "nonexistent_template",
   "useSolutionPackage": true
 }

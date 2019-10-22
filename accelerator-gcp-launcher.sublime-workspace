@@ -7,6 +7,62 @@
 	},
 	"buffers":
 	[
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 45,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 123,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "deploymentmanager-autogen/solution.yaml",
+			"settings":
+			{
+				"buffer_size": 56391,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package/cloudbees-accelerator.jinja",
+			"settings":
+			{
+				"buffer_size": 4009,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package/cloudbees-accelerator.jinja.display",
+			"settings":
+			{
+				"buffer_size": 7740,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package/cloudbees-accelerator.jinja.schema",
+			"settings":
+			{
+				"buffer_size": 2113,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package/test_config.yaml",
+			"settings":
+			{
+				"buffer_size": 123,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -32,6 +88,7 @@
 	},
 	"file_history":
 	[
+		"/Users/jefferyfry/git/accelerator-gcp-launcher/package/resources/en-us/cloudbees-accelerator_store.png",
 		"/Users/jefferyfry/Desktop/cloud-bill-dev-configs/frontend-service-config.json",
 		"/Users/jefferyfry/git/cbdc-identity-auth0/config.development.json",
 		"/Users/jefferyfry/Desktop/cloud-bill-dev-configs/datastore-backup-config.json",
@@ -116,6 +173,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"jenkins-distribution",
+			"CloudBees Jenkins Distribution",
+			"CloudBees Jenkins Distribution ",
 			"jenkins-support",
 			"CLOUD_BILLING",
 			"cloud-bill.35.185.91.171",
@@ -224,6 +284,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"accelerator",
+			"CloudBees Accelerator",
+			"CloudBees Accelerator ",
+			"CloudBees Accelerator",
 			"cloud-bill",
 			"CLOUD_BILL",
 			"cloud-bill",
@@ -273,8 +337,201 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": ".gitignore",
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45,
+								45
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 123,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								123,
+								123
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "deploymentmanager-autogen/solution.yaml",
+					"settings":
+					{
+						"buffer_size": 56391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								53258,
+								53258
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1551.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "package/cloudbees-accelerator.jinja",
+					"settings":
+					{
+						"buffer_size": 4009,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1440,
+								1440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1090.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "package/cloudbees-accelerator.jinja.display",
+					"settings":
+					{
+						"buffer_size": 7740,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1288,
+								1288
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 174.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "package/cloudbees-accelerator.jinja.schema",
+					"settings":
+					{
+						"buffer_size": 2113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 940.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "package/test_config.yaml",
+					"settings":
+					{
+						"buffer_size": 123,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								123,
+								123
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -334,6 +591,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 401.0,
 	"status_bar_visible": true
 }

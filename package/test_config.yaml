@@ -4,3 +4,5 @@ imports:
 resources:
 - name: cloudbees-accelerator
   type: cloudbees-accelerator.jinja
+  properties:
+    zone: us-central1-f

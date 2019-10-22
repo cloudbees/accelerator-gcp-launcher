@@ -6,49 +6,44 @@
 {% set instanceName = "%s-vm" % deployment %}
 {% set zone = properties["zone"] %}
 {% set machineType = properties["machineType"] %}
-{% set network = path_utils.networkPath(properties["network"]) %}
-{% set subnetwork = properties["subnetwork"] %}
+{% set networks = [] %}
+{% for network in properties["network"] %}
+{% set _ = networks.append(path_utils.networkPath(network)) %}
+{% endfor %}
+{% set subnetworks = properties["subnetwork"] %}
+{% set externalIPs = properties["externalIP"] %}
 {% set bootDiskType = properties["bootDiskType"] %}
 {% set bootDiskSizeGb = properties["bootDiskSizeGb"] %}
-{% set hasExternalIP = properties["externalIP"] != "NONE" %}
+{% set hasExternalIP = externalIPs and externalIPs[0] != "NONE" %}
 {# Software status only works if the VM has an external IP. #}
 {% set enableStatusWaiter = hasExternalIP %}
-{# Convert boolean type to integer. Stackdriver metadata items need value 0 or 1. #}
-{% set enableStackdriverLogging = "1" if properties["enableStackdriverLogging"] else "0" %}
-{# Convert boolean type to integer. Stackdriver metadata items need value 0 or 1. #}
-{% set enableStackdriverMonitoring = "1" if properties["enableStackdriverMonitoring"] else "0" %}
 
 resources:
-  - name: software-status
-    type: software_status.py
-    properties:
-      timeout: 360
-      waiterDependsOn:
-        - {{ instanceName }}
-      successNumber: 1
-  - name: software-status-script
-    type: software_status_script.py
-    properties:
-      initScript: |-
-        # init script contents
-        
-
-      checkScript: |-
-        # check script contents
   - name: {{ name }}
     type: vm_instance.py
     properties:
       instanceName: {{ instanceName }}
-      sourceImage: https://www.googleapis.com/compute/v1/projects/cje-marketplace-dev/global/images/cjd-base-image-2019-06-06
+      sourceImage: <source-image>
       zone: {{ zone }}
       machineType: {{ machineType }}
-      network: {{ network }}
-      {% if subnetwork %}
-      subnetwork: {{ subnetwork }}
+      networks:
+      {% for network in networks %}
+        - {{ network }}
+      {% endfor %}
+      {% if subnetworks is defined and subnetworks %}
+      subnetworks:
+      {% for subnetwork in subnetworks %}
+        - {{ subnetwork or '' }}
+      {% endfor %}
+      {% endif %}
+      {% if externalIPs is defined and externalIPs %}
+      externalIPs:
+      {% for externalIP in externalIPs %}
+        - {{ externalIP }}
+      {% endfor %}
       {% endif %}
       bootDiskType: {{ bootDiskType }}
       bootDiskSizeGb: {{ bootDiskSizeGb }}
-      hasExternalIP: {{ hasExternalIP }}
       serviceAccounts:
         - email: default
           scopes:
@@ -56,42 +51,9 @@ resources:
             - 'https://www.googleapis.com/auth/devstorage.read_only'
             - 'https://www.googleapis.com/auth/logging.write'
             - 'https://www.googleapis.com/auth/monitoring.write'
-            - 'https://www.googleapis.com/auth/cloudruntimeconfig'
-      metadata:
-        items:
-          - key: status-config-url
-            value: $(ref.software-status.config-url)
-          - key: status-variable-path
-            value: $(ref.software-status.variable-path)
-          - key: status-uptime-deadline
-            value: 360
-          - key: startup-script
-            value: $(ref.software-status-script.startup-script)
-          - key: google-logging-enable
-            value: {{ enableStackdriverLogging }}
-          - key: google-monitoring-enable
-            value: {{ enableStackdriverMonitoring }}
       tags:
         items:
-          - {{ env["deployment"] }}-tcp-443
-  {% if properties["enableTcp443"] %}
-  - name: {{ env["deployment"] }}-tcp-443
-    type: compute.v1.firewall
-    properties:
-      network: {{ network }}
-      {% if properties.get("tcp443SourceRanges") %}
-      sourceRanges:
-        {% for source in properties["tcp443SourceRanges"].split(',') %}
-        - '{{ source | trim }}'
-        {% endfor %}
-      {% else %}
-      sourceRanges: ["0.0.0.0/0"]
-      {% endif %}
-      targetTags: ["{{ env["deployment"] }}-tcp-443"]
-      allowed:
-        - IPProtocol: TCP
-          ports: ["443"]
-  {% endif %}
+          - {{ env["deployment"] }}-deployment
 
 outputs:
   - name: deployment
@@ -112,3 +74,7 @@ outputs:
     value: {{ instanceName }}
   - name: vmSelfLink
     value: $(ref.{{ instanceName }}.selfLink)
+  - name: hasExternalIP
+    value: {{ hasExternalIP }}
+  - name: mainNetwork
+    value: {{ networks[0] }}
