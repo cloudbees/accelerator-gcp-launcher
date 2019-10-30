@@ -1,5 +1,6 @@
-{% import "path_utils.jinja" as path_utils with context %}
 
+{% import "path_utils.jinja" as path_utils with context %}
+​
 {% set project = env["project"] %}
 {% set deployment = env["deployment"] %}
 {% set name = "%s-vm-tmpl" % env["name"] %}
@@ -17,13 +18,14 @@
 {% set hasExternalIP = externalIPs and externalIPs[0] != "NONE" %}
 {# Software status only works if the VM has an external IP. #}
 {% set enableStatusWaiter = hasExternalIP %}
-
+{% set canIpForward = properties["ipForward"] == "On" %}
+​
 resources:
   - name: {{ name }}
     type: vm_instance.py
     properties:
       instanceName: {{ instanceName }}
-      sourceImage: <source-image>
+      sourceImage: https://www.googleapis.com/compute/v1/projects/cje-marketplace-dev/global/images/accelerator-2019-10-00-90782
       zone: {{ zone }}
       machineType: {{ machineType }}
       networks:
@@ -44,6 +46,7 @@ resources:
       {% endif %}
       bootDiskType: {{ bootDiskType }}
       bootDiskSizeGb: {{ bootDiskSizeGb }}
+      canIpForward: {{ canIpForward }}
       serviceAccounts:
         - email: default
           scopes:
@@ -54,7 +57,43 @@ resources:
       tags:
         items:
           - {{ env["deployment"] }}-deployment
-
+  {% if properties["enableTcp22"] %}
+  - name: {{ env["deployment"] }}-tcp-22
+    type: compute.v1.firewall
+    properties:
+      network: {{ networks[0] }}
+      {% if properties.get("tcp22SourceRanges") %}
+      sourceRanges:
+        {% for source in properties["tcp22SourceRanges"].split(',') %}
+        - '{{ source | trim }}'
+        {% endfor %}
+      {% else %}
+      sourceRanges: ["0.0.0.0/0"]
+      {% endif %}
+      targetTags: ["{{ env["deployment"] }}-deployment"]
+      allowed:
+        - IPProtocol: TCP
+          ports: ["22"]
+  {% endif %}
+  {% if properties["enableTcp443"] %}
+  - name: {{ env["deployment"] }}-tcp-443
+    type: compute.v1.firewall
+    properties:
+      network: {{ networks[0] }}
+      {% if properties.get("tcp443SourceRanges") %}
+      sourceRanges:
+        {% for source in properties["tcp443SourceRanges"].split(',') %}
+        - '{{ source | trim }}'
+        {% endfor %}
+      {% else %}
+      sourceRanges: ["0.0.0.0/0"]
+      {% endif %}
+      targetTags: ["{{ env["deployment"] }}-deployment"]
+      allowed:
+        - IPProtocol: TCP
+          ports: ["443"]
+  {% endif %}
+​
 outputs:
   - name: deployment
     value: {{ deployment }}

@@ -1,3 +1,4 @@
+
 imports:
   - name: common.py
     path: common/common.py
@@ -9,18 +10,18 @@ imports:
     path: common/path_utils.jinja
   - name: vm_instance.py
     path: common/vm_instance.py
-
+​
 info:
   version: '1.0'
   title: CloudBees Accelerator Template
-
+​
 required:
   - zone
   - machineType
   - network
   - bootDiskType
   - bootDiskSizeGb
-
+​
 properties:
   zone:
     type: string
@@ -65,6 +66,12 @@ properties:
         networkProperty: network
         notConfigurable: False
         allowStaticIps: True
+  ipForward:
+    type: string
+    enum:
+      - 'On'
+      - 'Off'
+    default: 'Off'
   bootDiskType:
     type: string
     default: pd-ssd
@@ -80,7 +87,33 @@ properties:
       type: GCE_DISK_SIZE
       gceDiskSize:
         diskTypeProperty: bootDiskType
-
+  enableTcp22:
+    type: boolean
+    default: True
+    x-googleProperty:
+      type: GCE_FIREWALL
+      gceFirewall:
+        networkProperty: network
+  tcp22SourceRanges:
+    type: string
+    x-googleProperty:
+      type: GCE_FIREWALL_RANGE
+      gceFirewallRange:
+        firewallProperty: enableTcp22
+  enableTcp443:
+    type: boolean
+    default: True
+    x-googleProperty:
+      type: GCE_FIREWALL
+      gceFirewall:
+        networkProperty: network
+  tcp443SourceRanges:
+    type: string
+    x-googleProperty:
+      type: GCE_FIREWALL_RANGE
+      gceFirewallRange:
+        firewallProperty: enableTcp443
+​
 outputs:
   deployment:
     type: string

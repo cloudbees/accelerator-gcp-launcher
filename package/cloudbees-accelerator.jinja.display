@@ -1,3 +1,4 @@
+
 description:
   author:
     title: CloudBees
@@ -17,38 +18,38 @@ description:
     url: 'https://www.cloudbees.com/'
   descriptionHtml: >-
     <b>Build AOSP up to 5 times faster.</b><br/>
-
+​
     Waiting hours for Android OSP (AOSP) integration build cycles to complete is
     a massive bottleneck that inhibits innovation and delays time to market.
     CloudBees Accelerator runs on Google Compute Platform vCPUs to build AOSP
     3-5X faster than GNU Make and ccache.<br/>
-
+​
     <br/>
-
+​
     <b>HOW DOES CLOUDBEES ACCELERATOR WORK?</b><br/>
-
+​
     CloudBees Accelerator is a build and test acceleration platform for Android
     AOSP and other make-based build environments.  A drop-in replacement for
     Ninja, CloudBees Accelerator intelligently and automatically parallelizes
-    software tasks across clusters of physical or cloud CPUs to dramatically
-    lower build cycle times.<br/><br/>
-
-    » Fault-tolerant workload distribution load balancing maximizes GCP
-    resources</br>
-
-    » Intelligent caching eliminates redundant work through build avoidance</br>
-
+    software tasks across vCPUs to dramatically lower build cycle
+    times.<br/><br/>
+​
+    » Fault-tolerant workload distribution maximizes GCP resources</br>
+​
+    » Intelligent build caching eliminates redundant work and further speeds
+    builds</br>
+​
     » Visibility into build utilization and integrity pinpoints problems and
     identifies bottlenecks<br/>
-
+​
     </br>
-
+​
     <b>THE BUSINESS BENEFIT</b></br>
-
+​
     Accelerate your development velocity by 3-5x. Save 50% or more on your
     infrastructure costs (over typical dedicated build infrastructure).  Spend
     less time waiting for builds and more time on innovation.<br/></br>
-
+​
     Example: A major Android device manufacturer saw their build times drop from
     five hours to 23 minutes
   logo: '@media/cloudbees-accelerator_store.png'
@@ -59,9 +60,9 @@ description:
   eulaUrl: >-
     https://docs.cloudbees.com/docs/cloudbees-common/latest/subscription-agreement/
   documentations:
-    - title: Quick Start
+    - title: Getting Started
       url: >-
-        http://docs.electric-cloud.com/accelerator_doc/QuickStart/HTML/AcceleratorQuickStart.htm#AcceleratorQuickStartDownloadTrial.htm%3FTocPath%3D_____2
+        https://github.com/cloudbees/accelerator-gcp-launcher/blob/master/README.md
       destinations:
         - DESTINATION_SOLUTION_DETAILS
         - DESTINATION_POST_DEPLOY
@@ -83,14 +84,20 @@ description:
       destinations:
         - DESTINATION_SOLUTION_DETAILS
         - DESTINATION_POST_DEPLOY
+    - title: Command-Line Tool (cmtool) Overview
+      url: >-
+        http://docs.electric-cloud.com/accelerator_doc/Preview/cmtool/HTML/AcceleratorcmtoolGuide_Preview.htm
+      destinations:
+        - DESTINATION_SOLUTION_DETAILS
+        - DESTINATION_POST_DEPLOY
   support:
     - title: Support
       descriptionHtml: >-
-        Receive engineer-to-engineer help and guidance from the experts at
-        CloudBees.
-
-         <a href='https://support.cloudbees.com/hc/en-us'>https://support.cloudbees.com/hc/en-us.</a>
-      url: 'https://support.cloudbees.com/hc/en-us'
+        For questions, email <a href="mailto:support@cloudbees.com">CloudBees
+        support</a> or visit our <a
+        href="https://support.cloudbees.com/hc/en-us">support website</a>.
+      url: >-
+        https://gcp-marketplace.cloudbees.com/signupprod/{external_account_id}?prod=cloudbees-accelerator
       showSupportId: true
   icon: '@media/cloudbees-accelerator_small.png'
   softwareGroups:
@@ -127,6 +134,38 @@ input:
         href="https://cloud.google.com/compute/docs/configure-instance-ip-addresses">Learn
         more</a>
       section: NETWORKING
+    - name: enableTcp22
+      title: Allow TCP port 22 traffic from the Internet
+      section: NETWORKING
+    - name: tcp22SourceRanges
+      title: Source IP ranges for TCP port 22 traffic
+      tooltip: >-
+        Traffic is only allowed from sources within these IP address ranges. Use
+        CIDR notation when entering ranges. <a
+        href="https://cloud.google.com/compute/docs/networking#firewalls">Learn
+        more</a>
+      placeholder: '0.0.0.0/0, 192.169.0.2/24'
+      section: NETWORKING
+    - name: enableTcp443
+      title: Allow HTTPS traffic from the Internet
+      section: NETWORKING
+    - name: tcp443SourceRanges
+      title: Source IP ranges for HTTPS traffic
+      tooltip: >-
+        Traffic is only allowed from sources within these IP address ranges. Use
+        CIDR notation when entering ranges. <a
+        href="https://cloud.google.com/compute/docs/networking#firewalls">Learn
+        more</a>
+      placeholder: '0.0.0.0/0, 192.169.0.2/24'
+      section: NETWORKING
+    - name: ipForward
+      title: IP forwarding
+      tooltip: >-
+        Forwarding allows the instance to help route packets. <a
+        href="https://cloud.google.com/compute/docs/networking#canipforward">Learn
+        more</a>
+      section: NETWORKING
+      level: 1
   sections:
     - name: BOOT_DISK
       title: Boot Disk
@@ -137,6 +176,14 @@ runtime:
   deployingMessage: Deployment can take several minutes to complete.
   applicationTable:
     rows:
+      - label: Site address
+        value: >-
+          <a href="https://{{ externalIp(outputs().vmSelfLink)
+          }}:443/">https://{{ externalIp(outputs().vmSelfLink) }}:443/</a>
+        showIf: '{{ outputs().hasExternalIP }}'
+      - label: Site address (internal IP)
+        value: 'https://{{ outputs().vmInternalIP }}:443/'
+        showIf: '{{ !outputs().hasExternalIP }}'
       - label: Instance
         value: >-
           <a href="{{ consoleUrl(outputs().vmSelfLink) }}">{{ outputs().vmName
@@ -146,6 +193,10 @@ runtime:
       - label: Instance machine type
         value: '{{ properties().machineType }}'
   primaryButton:
+    label: Visit the site
+    type: TYPE_URL
+    action: 'https://{{ externalIp(outputs().vmSelfLink) }}:443/'
+  secondaryButton:
     label: Connect to Accelerator VM
     type: TYPE_GCE_VM_SSH
     action: '{{ outputs().vmSelfLink }}'
@@ -158,7 +209,7 @@ runtime:
         href="https://cloud.google.com/compute/docs/instances/connecting-advanced#bastion_host">bastion
         host</a> to access this VM.
       showIf: '{{ !outputs().hasExternalIP }}'
-    - heading: Set up your project sources
+    - heading: Setup your project sources
       description: >-
         On your GCP Marketplace instance, download or checkout your source code
         and install any additional tools needed to execute your build.
@@ -181,6 +232,32 @@ runtime:
         Run emake again, from the same directory, and using the same options you
         used the first time.
       snippet: 'emake --emake-root=~/src:~/out'
+    - heading: Open TCP port 22 traffic
+      description: >-
+        This firewall rule is not enabled. To allow specific network traffic
+        from the Internet, create a firewall rule to open TCP port 22 traffic
+        for target tag "{{ outputs().deployment }}-deployment". <a
+        href="https://cloud.google.com/compute/docs/networking">Learn
+        more</a><br> If you are using Google Cloud SDK, type the following
+        command in the terminal:
+      snippet: >-
+        gcloud --project={{ outputs().project }} compute firewall-rules create
+        "{{ outputs().deployment }}-tcp-22" --network {{ outputs().mainNetwork
+        }} --allow tcp:22 --target-tags "{{ outputs().deployment }}-deployment"
+      showIf: '{{ !properties().enableTcp22 }}'
+    - heading: Open HTTPS traffic
+      description: >-
+        This firewall rule is not enabled. To allow specific network traffic
+        from the Internet, create a firewall rule to open HTTPS traffic for
+        target tag "{{ outputs().deployment }}-deployment". <a
+        href="https://cloud.google.com/compute/docs/networking">Learn
+        more</a><br> If you are using Google Cloud SDK, type the following
+        command in the terminal:
+      snippet: >-
+        gcloud --project={{ outputs().project }} compute firewall-rules create
+        "{{ outputs().deployment }}-tcp-443" --network {{ outputs().mainNetwork
+        }} --allow tcp:443 --target-tags "{{ outputs().deployment }}-deployment"
+      showIf: '{{ !properties().enableTcp443 }}'
     - heading: Assign a static external IP address to your VM instance
       description: >-
         An ephemeral external IP address has been assigned to the VM instance.
@@ -192,5 +269,5 @@ runtime:
 annotations:
   autogenSpecType: SINGLE_VM
   vmImage0: >-
-    <vm-image>
+    https://www.googleapis.com/compute/v1/projects/cje-marketplace-dev/global/images/accelerator-2019-10-00-90782
 metadata_version: v1
