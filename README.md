@@ -2,7 +2,7 @@
 
 ## What is CloudBees Accelerator®?
 
-CloudBees Accelerator (“Accelerator”) from CloudBees, Inc. is a high-performance, drop-in replacement for Ninja build facilities that dramatically reduces software build times. Unlike other parallel build tools, Accelerator guarantees that builds will not fail because of incomplete dependencies, thanks to patented conflict detection and correction algorithms. So your build results—including the build log—are identical to those from serial builds, but they happen with the speed of parallel builds by distributing them over numerous inexpensive machines on a LAN or a public cloud such as Google Cloud Platform. You can also use Accelerator to accelerate static analysis (such as the Coverity, Klocwork, and Parasoft tools), unit testing, and linting tasks.
+CloudBees Accelerator (“Accelerator”) from CloudBees, Inc. is a high-performance, drop-in replacement for GNU Make and Ninja build facilities that dramatically reduces software build times. Unlike other parallel build tools, Accelerator guarantees that builds will not fail because of incomplete dependencies, thanks to patented conflict detection and correction algorithms. So your build results—including the build log—are identical to those from serial builds, but they happen with the speed of parallel builds by distributing them over numerous inexpensive machines on a LAN or a public cloud such as Google Cloud Platform. You can also use Accelerator to accelerate static analysis (such as the Coverity, Klocwork, and Parasoft tools), unit testing, and linting tasks.
 
 Accelerator has two primary user-facing parts: Electric Make (”eMake”)—the command-line front end to the cluster, and the Cluster Manager web UI—a web-based dashboard for managing the cluster and viewing various types of cluster activity. In most cases, switching from another build tool to Accelerator is as easy as replacing `make` with `emake`.
 
@@ -10,13 +10,13 @@ Accelerator has two primary user-facing parts: Electric Make (”eMake”)—the
 
 1. Launch Accelerator on Compute Engine.
 
-    Visit the Accelerator marketplace solution page [CloudBees Accelerator marketplace solution page](https://console.cloud.google.com/marketplace/details/cloudbees/cloudbees-accelerator) and click the **LAUNCH ON COMPUTE ENGINE** button:
+    Visit the [CloudBees Accelerator marketplace solution page](https://console.cloud.google.com/marketplace/details/cloudbees/cloudbees-accelerator) and click the **LAUNCH ON COMPUTE ENGINE** button:
 
 ![](./img/LaunchComputeEngine.png)
 
 2. Choose your parameters for deploying Accelerator.
 
-    Specify your deployment name, zone, and machine parameters. The recommended machine for the best performance is a n1-standard-32 (32 vCPUs, 120GB RAM) and a 500 GB persistent SSD:
+    Specify your deployment name, zone, and machine parameters. The recommended machine for the best performance is an n1-standard-32 (32 vCPUs, 120GB RAM) and a 500 GB persistent SSD:
 
     ![](./img/Deployment.png)
 
@@ -55,7 +55,7 @@ Accelerator has two primary user-facing parts: Electric Make (”eMake”)—the
 ```
     emake --emake-root=/home/bill/proj_q3:/src/foo:/src/baz
 ```
-A message `Starting build: <build_number>` appears. When the build is finished, a message such as the following message appears:
+    A message `Starting build: <build_number>` appears. When the build is finished, a message such as the following message appears:
 ```
     Finished build: 1 Duration: 0:41 (m:s) Cluster availability: 100%
 
@@ -75,7 +75,9 @@ A message `Starting build: <build_number>` appears. When the build is finished, 
 
 ## How Do I See Data About Builds and Users?
 
-Sign in to the Cluster Manager web UI at `https://<server_hostname_or_IP>/` using the default administrator user name `admin` and password `changeme`. You should change the default password as soon as possible. (If the Cluster Manager web server does not use port 443, append `:<port>` to the host name or IP address.) A security warning appears because a web server certificate is not installed.
+Sign in to the Cluster Manager web UI at `https://<server_hostname_or_IP>/` using the default administrator user name `admin` and password `changeme`. You should change the default password as soon as possible. (If the Cluster Manager web server does not use port 443, append `:<port>` to the host name or IP address.) 
+
+A security warning appears because of an invalid certificate. You should replace the self-signed Apache certificate with one that is signed by a certificate authority.
 
 Then, for
 
