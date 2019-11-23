@@ -55,7 +55,9 @@ Accelerator has two primary user-facing parts: Electric Make (”eMake”)—the
 ```
     emake --emake-root=/home/bill/proj_q3:/src/foo:/src/baz
 ```
-    A message `Starting build: <build_number>` appears. When the build is finished, a message such as the following message appears:
+
+   A message `Starting build: <build_number>` appears. For example, `Starting build: 1`. When the build is finished, a message such as the following message appears:
+
 ```
     Finished build: 1 Duration: 0:41 (m:s) Cluster availability: 100%
 
