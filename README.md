@@ -6,6 +6,8 @@ CloudBees Accelerator (“Accelerator”) from CloudBees, Inc. is a high-perform
 
 Accelerator has two primary user-facing parts: Electric Make (”eMake”)—the command-line front end to the cluster, and the Cluster Manager web UI—a web-based dashboard for managing the cluster and viewing various types of cluster activity. In most cases, switching from another build tool to Accelerator is as easy as replacing `make` with `emake`.
 
+You do not need to request or import a license file to run Accelerator on GCP Marketplace.
+
 ## How Do I Deploy Accelerator from GCP Marketplace?
 
 1. Launch Accelerator on Compute Engine.
@@ -77,7 +79,7 @@ Accelerator has two primary user-facing parts: Electric Make (”eMake”)—the
 
 Sign in to the Cluster Manager web UI at `https://<server_hostname_or_IP>/` using the default administrator user name `admin` and password `changeme`. You should change the default password as soon as possible. (If the Cluster Manager web server does not use port 443, append `:<port>` to the host name or IP address.) 
 
-A security warning appears because of an invalid certificate. You should replace the self-signed Apache certificate with one that is signed by a certificate authority.
+A security warning appears because of an invalid certificate. If you want to eliminate this warning, replace the self-signed Apache certificate with one that is signed by a certificate authority. For details, see “Installing an Apache Server Certificate” in the CloudBees Accelerator Installation and Configuration Guide, available [here](http://docs.electric-cloud.com/accelerator_doc/AcceleratorIndex.html).
 
 Then, for
 
