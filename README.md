@@ -107,4 +107,4 @@ For basic Accelerator terms and concepts, explanations of the relationships amon
 
 ## How Do I Get Help?
 
-For technical support, call +1 408.419.4300, send email to accel-support@cloudbees.com, or go to https://support.cloudbees.com/hc/en-us/categories/360002059512/ to submit a support request. You can also go to https://ask.cloudbees.com/ —a member-moderated community forum where you can ask and answer questions as well as comment on (and vote for) the questions of others and their answers.
+For technical support, send email to accel-support@cloudbees.com or go to https://support.cloudbees.com/hc/en-us/categories/360002059512/ to submit a support request. You can also go to https://ask.cloudbees.com/ —a member-moderated community forum where you can ask and answer questions as well as comment on (and vote for) the questions of others and their answers.
